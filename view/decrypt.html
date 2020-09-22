@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encrypt.com</title>
+
+        <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body background="/images/encriptar.jpg" class="responsive-img">
+    <div class="navbar-fixed">
+        <nav class="white">
+            <div class="nav-wrapper ">
+                <a class="left">
+                    <img src="../images/LOGO ENCRY.png" style="max-width:180px;width:auto;height:auto;">
+                </a>
+                <ul class="right hide-on-med-and-down ">
+                    <li><a class="blue-text text-darken-4 waves-effect waves-light  modal-trigger" style="font-family:'times'" href="#modal1">INFO</a>
+                    </li>
+                    <li><a class="blue-text text-darken-4 " style="font-family:'times'"
+                            href="/views/proyectos.html">AYUDA</a></li>
+                    
+                </ul>YD
+            </div>
+        </nav>
+    </div>
+  
+
+
+ <!-- Modal Structure -->
+ <div id="modal1" class="modal white" >
+    <div class="modal-content">
+      <h4 class="cyan-text text-darken-2" style="font-family:'Comic Sans'">NOSOTROS</h4>
+      <div class="collection section  cyan darken-2 ">
+        <span class="badge"></span>
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="images/ronal.jpg" alt="" class="circle responsive-img"> 
+            </div>
+            <div class="col s10">
+              <span class="white-text">
+                Ronald Johan Pineda Quitian <br> Ronald.pineda01@uptc.edu.co</p>
+              </span>
+            </div>
+          </div>
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="images/yenny.jpeg" alt="" class="circle responsive-img"> 
+            </div>
+            <div class="col s10">
+              <span class="white-text">
+               Yenny Alexandra Sanchez Jimenez <br> Yennysanchez.02@uptc.edu.co</p>
+              </span>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="fixed-action-btn">
+        <a href="../index.html" class="btn-floating btn-large blue">
+        <i class="large material-icons">reply</i>
+        </a>
+    </div>
+    <div class="container">
+        <h1 style="color:aliceblue">Desencriptador</h1>
+        <br>
+    </div>
+    <div class="container section" style="background-color:rgba(236, 239, 241,0.9)">
+            <div class="row container section">
+                <div class="col  m12 s12 l12">
+                    <div class="row">
+                        <h5 class="black-text" style="font-family:'Comic Sans'">Escribe tu mensaje:</h5>
+
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="id_mensaje" class="materialize-textarea" data-length="2000"
+                                name="mensaje"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix ">today</i>
+                    <input id="id_date"  type="text" class="datepicker left">
+                </div>
+                <div class="input-field col s8">
+                    <i class="material-icons prefix">lock_outlan</i>
+                    <input id="id_clave" type="password" data-length="10">
+                    <label for="input_text" name="clave">Clave Secreta</label>
+                </div>
+                
+                <div class="col m12 l12 s12">
+                    <!-- <button class="btn right" type="submit" >Enviar</button> -->
+                    <a id="Desencriptar"  class="btn right" type='submit'>Desencriptar</a>
+                </div>
+                <div class="left col l12 s12">
+                    <p class="blue-text text-lighten-1 " style="font-family:'Comic Sans'">Matematicas Discretas
+                        Tema:Arboles
+                    </p>
+                </div>
+            </div>
+    </div>
+    <br>
+    <br>
+    <div class="container section" id="encriptarContent" style="background-color:rgba(145, 194, 206, 0.9)">
+        <div class="container">
+            <h5 class="white-text" style="font-family:'Comic Sans'">Descubre el mensaje encriptado.</h5>
+            <br>
+        </div>
+        <div class="container section">
+            <h5 class="container section" id="parrafo" name="parrafo" class="black-text" style="font-family:'Comic Sans'"></h5>
+        </div>
+    </div>
+    <hr>
+    <footer class="page-footer cyan darken-2 ">
+    </div>
+    <div class="footer-copyright" style="background-color:rgba(241, 236, 241, 0.9)">
+        <div class="container blue-text text-darken-4" style="font-family:'Comic Sans'">
+            © 2020 Proyecto de Yenny Sanchez y Ronald Pineda [Matematicas Discretas]
+        </div>
+    </div>
+    </div>
+</footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/scripts/runners.js"></script>
+    <script src="/scripts/main.js" type="module"></script>
+</body>
+</html>

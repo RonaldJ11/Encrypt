@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encrypt.com</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="center" id="circulo"> 
+        <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+            <div class="circle"></div>
+            </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="hide" id="contenido">
+        <h1 class="blue text">'Hola mundo</h1>
+    </div>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="/scripts/runners.js"></script>
+    <script src="/scripts/main.js" type="module"></script> -->
+    <script > 
+        window.addEventListener('load', () => {
+            setTimeout(carga, 2000);
+            function carga(){
+                document.getElementById('circulo').className='hide';
+                document.getElementById('contenido').className='center';
+            }
+        })
+    </script>
+        
+</body>
+</html>
