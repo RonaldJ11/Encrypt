@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>encrypt.com</title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="/images/reino-animal.png" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -16,6 +17,55 @@
 </head>
 
 <body background="/images/encriptar.jpg" class="responsive-img">
+    <!-- pantalla de carga -->
+    <div class="center" id="circulo">
+        <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+
+    <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- inicio -->
+  <div class="hide" id="contenido">
     <div class="navbar-fixed">
         <nav class="white">
             <div class="nav-wrapper ">
@@ -26,7 +76,7 @@
                     <li><a class="blue-text text-darken-4 waves-effect waves-light  modal-trigger" style="font-family:'times'" href="#modal1">INFO</a>
                     </li>
                     <li><a class="blue-text text-darken-4 " style="font-family:'times'"
-                            href="/views/proyectos.html">AYUDA</a></li>
+                            href="/view/help.html">AYUDA</a></li>
 
                 </ul>
             </div>
@@ -34,15 +84,15 @@
     </div> 
     
     
- <!-- Modal Structure -->
- <div id="modal1" class="modal white" >
+   <!-- Modal Structure -->
+   <div id="modal1" class="modal white" >
     <div class="modal-content">
       <h4 class="cyan-text text-darken-2" style="font-family:'Comic Sans'">NOSOTROS</h4>
       <div class="collection section  cyan darken-2 ">
         <span class="badge"></span>
           <div class="row valign-wrapper">
             <div class="col s2">
-              <img src="images/ronal.jpg" alt="" class="circle responsive-img"> 
+              <img src="/images/ronal.jpg" alt="" class="circle responsive-img"> 
             </div>
             <div class="col s10">
               <span class="white-text">
@@ -52,7 +102,7 @@
           </div>
           <div class="row valign-wrapper">
             <div class="col s2">
-              <img src="images/yenny.jpeg" alt="" class="circle responsive-img"> 
+              <img src="/images/yenny.jpeg" alt="" class="circle responsive-img"> 
             </div>
             <div class="col s10">
               <span class="white-text">
@@ -62,17 +112,20 @@
           </div>
       </div>
     </div>
-
+    <div class="modal-footer">
+      <button href="#!" class="modal-close waves-effect cyan-text text-darken-2 waves-green btn-flat">CERRAR</button>
+    </div>
+  </div>
     <div class="fixed-action-btn">
         <a href="../index.html" class="btn-floating btn-large blue">
         <i class="large material-icons">reply</i>
         </a>
     </div>
-    <div class="container">
+    <div class="container ">
         <h1 style="color:aliceblue">Encriptador</h1>
         <br>
     </div>
-    <div class="container section" style="background-color:rgba(236, 239, 241,0.9)">
+    <div class="container section" style="background-color:rgba(236, 239, 241,0.9); margin-bottom: 20px;">
             <div class="row container section">
                 <div class="col  m12 s12 l12">
                     <div class="row">
@@ -80,7 +133,7 @@
 
                         <div class="input-field col s12">
                             <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="id_mensaje" class="materialize-textarea" data-length="2000"
+                            <textarea id="id_mensaje" class="materialize-textarea" data-length="5000"
                                 name="mensaje"></textarea>
                         </div>
 
@@ -92,8 +145,8 @@
                     <label for="input_text" name="clave">Clave Secreta</label>
                 </div>
                 <div class="col m12 l12 s12">
-                    <!-- <button class="btn right" type="submit" >Enviar</button> -->
-                    <a id="Encriptar" class="btn right" type='submit'>Encriptar</a>
+                    <a id="Limpiar"  class="btn right" type='submit' style="margin-left: 5px;"><i class="material-icons">delete</i></a>
+                    <a id="Encriptar"  class="btn right modal-trigger" type='submit'  href="#modal2">Encriptar</a>
                 </div>
                 <div class="left col l12 s12">
                     <p class="blue-text text-lighten-1 " style="font-family:'Comic Sans'">Matematicas Discretas
@@ -102,32 +155,47 @@
                 </div>
             </div>
     </div>
-    <br>
-    <br>
-    <div class="container section" id="encriptarContent" style="background-color:rgba(145, 194, 206, 0.9)">
-        <div class="container">
-            <h5 class="white-text" style="font-family:'Comic Sans'">Copia y pasale el mensaje encriptado a la persona que
-                quieras:</h5>
-            <br>
+
+
+      <!-- Modal Structure -->
+      <div id="modal2" class="modal white" >
+        <div class="modal-content">
+          <h4 class="cyan-text text-darken-2" style="font-family:'Comic Sans'">Encriptado</h4>
+          <div class="collection section  cyan darken-2 ">
+            <span class="badge"></span>
+              <div class="row valign-wrapper">
+                <div class="col s12" style="padding-top: 20px; padding-left: 20px; padding-right: 20px;">
+                  <span class="white-text">
+                    <textarea id="parrafo" style=" height: 25em; width: 40em; font-size: 12pt; font-family:'Comic Sans'" name="parrafo" class="black-text" style="font-family:'Comic Sans'"></textarea>
+                  </span>
+                </div>
+              </div>
+          </div>
         </div>
-        <div class="container section">
-            <h5 class="container section" id="parrafo" name="parrafo" class="black-text" style="font-family:'Comic Sans'"></h5>
+        <div class="modal-footer" id="modal2-footer">
+          <button href="#!" id="cerrar" class="modal-close waves-effect cyan-text text-darken-2 waves-green btn-flat">CERRAR</button>
         </div>
+      </div>
+</div>
+
+<footer class="page-footer cyan darken-2 ">
+  <div class="footer-copyright" style="background-color:rgba(236, 239, 241,0.9)">
+    <div class="container blue-text text-darken-4" style="font-family:'Comic Sans'">
+      © 2020 Proyecto de Yenny Sanchez y Ronald Pineda [Matematicas Discretas]
     </div>
-    <hr>
-    <footer class="page-footer cyan darken-2 ">
-        </div>
-        <div class="footer-copyright" style="background-color:rgba(241, 236, 241, 0.9)">
-            <div class="container blue-text text-darken-4" style="font-family:'Comic Sans'">
-                © 2020 Proyecto de Yenny Sanchez y Ronald Pineda [Matematicas Discretas]
-            </div>
-        </div>
-        </div>
-    </footer>
+  </div>
+</footer>
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/scripts/runners.js"></script>
     <script src="/scripts/main.js" type="module"></script>
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('circulo').className = 'hide';
+            document.getElementById('contenido').className = 'center';
+        })
+    </script>
 </body>
 
 </html>

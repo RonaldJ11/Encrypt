@@ -1,121 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>encrypt.com</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>encrypt.com</title>
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/reino-animal.png" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-    <div class="navbar-fixed">
-        <nav class="white">
-            <div class="nav-wrapper " style="font-family:'times'">
-                <a class="left">
-                    <img src="./images/LOGO ENCRY.png" style="max-width:180px;width:auto;height:auto;">
-                </a>
-                <ul class="right hide-on-med-and-down ">
-                    <li><a class="blue-text text-darken-4 waves-effect waves-light  modal-trigger" style="font-family:'times'" href="#modal1">INFO</a>
-                    </li>
-                    <li><a class="blue-text text-darken-4 " style="font-family:'times'"
-                            href="./views/proyectos.html">AYUDA</a></li>
-                    
-                </ul>
-            </div>
-        </nav>
-    </div>
+  <!-- pantalla de carga -->
+  <div class="center" id="circulo">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4 class="blue-text text-darken-4">NOSOTROS</h4>
-      <div class="collection">
-        <p class="collection-item"><span class="badge"></span>
-          <div class="row valign-wrapper">
-            <div class="col s2">
-              <img src="./images/ronal.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <div class="col s10">
-              <span class="black-text">
-                Ronald Johan Pineda Quitian <br> Ronald.pineda02@uptc.edu.co</p>
-              </span>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s2">
-              <img src="./images/ronal.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <div class="col s10">
-              <span class="black-text">
-                Ronald Johan Pineda Quitian <br> Ronald.pineda02@uptc.edu.co</p>
-              </span>
-            </div>
-          </div>
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button href="#!" class="modal-close waves-effect cyan-text text-darken-2 waves-green btn-flat">CERRAR</button>
-    </div>
+    
   </div>
-
-
-
-    <div class="parallax-container">
-        <div class="parallax"><img src="./images/image3.png"></div>
-      </div>
-      
-      <div class="container section">
-      <div class="row" >
-        <div class="col s12 m6">
-          <div class="card"style="background-color:rgba(236, 239, 241,0.9)">
-            <div class="card-content blue-text text-darken-4">
-              <span class="card-title cyan-text text-darken-2 "><i class="material-icons">lock_outline</i>Encriptar</span>
-              <p>Este método de encriptación implementa la técnica de árboles para organizar el código de encriptación
-                ,la fecha y encontrar x números que van a ser los encargados de adicionarse al texto originalmente ingresado
-                y encriptarlo.</p>
+  
+  <!-- inicio -->
+  <div class="hide" id="contenido">
+        <div class="navbar-fixed">
+          <nav class="white">
+            <div class="nav-wrapper " style="font-family:'times'">
+              <a class="left">
+                <img src="./images/LOGO ENCRY.png" style="max-width:180px;width:auto;height:auto;">
+              </a>
+              <ul class="right hide-on-med-and-down ">
+                <li><a class="blue-text text-darken-4 waves-effect waves-light  modal-trigger" style="font-family:'times'"
+                    href="#modal1">INFO</a>
+                </li>
+                <li><a class="blue-text text-darken-4 " style="font-family:'times'" href="./view/help.html">AYUDA</a>
+                </li>
+              </ul>
             </div>
-            <div class="card-action">
-              <a href="./view/encrypt.html" class="cyan-text text-darken-2">Para encriptar da click Aqui</a>
-            </div>
+          </nav>
+        </div>
+    </div>    
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal white" >
+        <div class="modal-content">
+          <h4 class="cyan-text text-darken-2" style="font-family:'Comic Sans'">NOSOTROS</h4>
+          <div class="collection section  cyan darken-2 ">
+            <span class="badge"></span>
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img src="./images/ronal.jpg" alt="" class="circle responsive-img"> 
+                </div>
+                <div class="col s10">
+                  <span class="white-text">
+                    Ronald Johan Pineda Quitian <br> Ronald.pineda01@uptc.edu.co</p>
+                  </span>
+                </div>
+              </div>
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img src="./images/yenny.jpeg" alt="" class="circle responsive-img"> 
+                </div>
+                <div class="col s10">
+                  <span class="white-text">
+                   Yenny Alexandra Sanchez Jimenez <br> Yennysanchez.02@uptc.edu.co</p>
+                  </span>
+                </div>
+              </div>
           </div>
         </div>
-        <div class="col s12 m6">
+        <div class="modal-footer">
+          <button href="#!" class="modal-close waves-effect cyan-text text-darken-2 waves-green btn-flat">CERRAR</button>
+        </div>
+      </div>
+
+      <div class="parallax-container">
+        <div class="parallax"><img src="./images/image3.png"></div>
+      </div>
+
+      <div class="container section">
+        <div class="row">
+          <div class="col s12 m6">
             <div class="card" style="background-color:rgba(236, 239, 241,0.9)">
               <div class="card-content blue-text text-darken-4">
-                <span class="card-title cyan-text text-darken-2"><i class="material-icons">lock_open</i>Desencriptar</span>
-                <p>El método de des encriptación consiste en realizar el mismo proceso de encriptación implementando 
-                  árboles haciendo el proceso a la inversa para encontrar el texto teniendo como base la información 
-                  de el texto encriptado</p>
+                <span class="card-title cyan-text text-darken-2 "><i
+                      class="material-icons">lock_outline</i>Encriptar</span>
+                  <p>Este método de encriptación implementa la técnica de árboles para organizar el código de encriptación
+                    ,la fecha y encontrar x números que van a ser los encargados de adicionarse al texto originalmente
+                    ingresado
+                    y encriptarlo.</p>
+              </div>
+              <div class="card-action">
+                <a href="./view/encrypt.html" class="cyan-text text-darken-2">Para encriptar da click Aqui</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card" style="background-color:rgba(236, 239, 241,0.9)">
+              <div class="card-content blue-text text-darken-4">
+                  <span class="card-title cyan-text text-darken-2"><i
+                    class="material-icons">lock_open</i>Desencriptar</span>
+                  <p>El método de des encriptación consiste en realizar el mismo proceso de encriptación implementando
+                    árboles haciendo el proceso a la inversa para encontrar el texto teniendo como base la información
+                    de el texto encriptado</p>
               </div>
               <div class="card-action ">
                 <a href="./view/decrypt.html" class="cyan-text text-darken-2">Para desencriptar da click Aqui</a>
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
       <div class="parallax-container">
         <div class="parallax"><img src="./images/helloworld2.jpg"></div>
       </div>
 
-    <footer class="page-footer cyan darken-2 ">
-    </div>
+      <footer class="page-footer cyan darken-2 ">
         <div class="footer-copyright" style="background-color:rgba(236, 239, 241,0.9)">
-            <div class="container blue-text text-darken-4" style="font-family:'Comic Sans'">
-                © 2020 Proyecto de Yenny Sanchez y Ronald Pineda [Matematicas Discretas]
-            </div>
+          <div class="container blue-text text-darken-4" style="font-family:'Comic Sans'">
+            © 2020 Proyecto de Yenny Sanchez y Ronald Pineda [Matematicas Discretas]
+          </div>
         </div>
-        </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./scripts/runners.js"></script>
-    <script src="./scripts/main.js" type="module"></script>
-    </body>
-    </html>
-    
+      </footer> 
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./scripts/runners.js"></script>
+  <script src="./scripts/main.js" type="module"></script>
+  <script>
+    window.addEventListener('load', () => {
+        document.getElementById('circulo').className = 'hide';
+        document.getElementById('contenido').className = 'center';
+    })
+  </script>
+  
+</body>
+
+</html>

@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var instances = M.ScrollSpy.init(elems, {
     scrollOffset: 20,
   });
+  var elems = document.querySelectorAll('.tabs');
+  var instance = M.Tabs.init(elems);
 
   var elems = document.querySelectorAll('.modal');
   var instances = M.Modal.init(elems);
