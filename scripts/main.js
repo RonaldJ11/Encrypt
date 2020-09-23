@@ -5,44 +5,20 @@ import Btree from "./model/tree.js";
  *
  */
 function encryptOrDecrypt(text, code, today, typeOperation) {
-  if (text.length > 5000) {
-    var toastHTML =
-      '<span>Excedio el Tamaño del texto</span><button class="btn-flat toast-action">Ok</button>';
-    M.toast({ html: toastHTML });
+  if(validateInfo(text,code,today)==false){
     return "";
   }
-  if (code.length > 10) {
-    var toastHTML =
-      '<span>Excedio el Tamaño de la clave</span><button class="btn-flat toast-action">Ok</button>';
-    M.toast({ html: toastHTML });
-    return "";
-  }
-  if (code.length==0) {
-    var toastHTML =
-    '<span>Inserta codigo</span><button class="btn-flat toast-action">Ok</button>';
-    M.toast({ html: toastHTML });
-      return "";
-  }
-  if (today.getDate()=="") {
-    var toastHTML =
-    '<span>Inserta fecha</span><button class="btn-flat toast-action">Ok</button>';
-    M.toast({ html: toastHTML });
-      return "";
-  }
-  
-  for (let index = 0; index < code.length; index++) {
-    if (code.charCodeAt(index) < 47 || code.charCodeAt(index) > 58) {
-      var toastHTML =
-        '<span>Solo se admite numeros en la clave</span><button class="btn-flat toast-action">Ok</button>';
-      M.toast({ html: toastHTML });
-      return "";
-    }
-  }
-
   var btree = new Btree();
   var word = "";
+  var ac = true;
   for (let index = 0; index < code.length; index++) {
-    btree.add(code.charAt(index));
+    if(ac&&(index+2)>=code.length){ 
+      btree.add(code.charAt(index)+code.charAt(index));
+      console.log();
+    }else{
+      btree.add(code.charAt(index));
+    }
+  
   }
   btree.add(today.getDate());
   btree.add(today.getMonth() + 1);
@@ -69,9 +45,58 @@ function encryptOrDecrypt(text, code, today, typeOperation) {
       html: "Desencriptado!  desliza para ver tu mensaje",
       classes: "rounded",
     });
+ }
+
+    ac = false;return word;
+}
+
+
+function validateInfo(text,code,today){
+  if (text.length > 5000) {
+    var toastHTML =
+      '<span>Excedio el Tamaño del texto</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({ html: toastHTML });
+    return false;
+  }
+  if (code.length > 10) {
+    var toastHTML =
+      '<span>Excedio el Tamaño de la clave</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({ html: toastHTML });
+    return false;
+  }
+  if (code.length==0) {
+    var toastHTML =
+    '<span>Inserta codigo</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({ html: toastHTML });
+      return false;
   }
 
-  return word;
+  if (text.length==0) {
+    var toastHTML =
+    '<span>Inserta Mensaje </span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({ html: toastHTML });
+      return false;
+  }
+  for (let i = 1; i < code.length; i++) {
+    for (let j = 0; j < i; j++) {
+    if (code.charCodeAt(i)==code.charCodeAt(j)) {
+      var toastHTML =
+        '<span>No se pueden repetir numeros en el codigo</span><button class="btn-flat toast-action">Ok</button>';
+      M.toast({ html: toastHTML });
+      return false;
+    }
+  }
+}
+
+
+  for (let index = 0; index < code.length; index++) {
+    if (code.charCodeAt(index) < 47 || code.charCodeAt(index) > 58) {
+      var toastHTML =
+        '<span>Solo se admite numeros en la clave</span><button class="btn-flat toast-action">Ok</button>';
+      M.toast({ html: toastHTML });
+      return "";
+    }
+  }
 }
 
 //metodo recibe coge la informacion y la encripta5
@@ -108,9 +133,6 @@ if (buttonDesencriptar != null) {
       var instance = M.Modal.getInstance(elem);
       instance.open();
     }
-    document.getElementById("id_mensaje").value=null;
-    document.getElementById("id_clave").value=null;
-    document.getElementById("id_date").value=null;
   };
 }
 var cerrar = document.getElementById("cerrar");
