@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
     var elems = document.querySelectorAll(".datepicker");
-    var instances = M.Datepicker.init(elems);
+    var instances = M.Datepicker.init(elems,{
+      defaultDate: new Date(),setDefaultDate:true,
+    });
 });
 $(document).ready(function () {
   $("input#id_clave, textarea#id_mensaje").characterCounter();

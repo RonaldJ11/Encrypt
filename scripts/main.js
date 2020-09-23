@@ -7,18 +7,31 @@ import Btree from "./model/tree.js";
 function encryptOrDecrypt(text, code, today, typeOperation) {
   if (text.length > 5000) {
     var toastHTML =
-      '<span>Exedio el Tamaño del texto</span><button class="btn-flat toast-action">Ok</button>';
+      '<span>Excedio el Tamaño del texto</span><button class="btn-flat toast-action">Ok</button>';
     M.toast({ html: toastHTML });
     return "";
   }
   if (code.length > 10) {
     var toastHTML =
-      '<span>Exedio el Tamaño de la clave</span><button class="btn-flat toast-action">Ok</button>';
+      '<span>Excedio el Tamaño de la clave</span><button class="btn-flat toast-action">Ok</button>';
     M.toast({ html: toastHTML });
     return "";
   }
+  if (code.length==0) {
+    var toastHTML =
+    '<span>Inserta codigo</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({ html: toastHTML });
+      return "";
+  }
+  if (today.getDate()=="") {
+    var toastHTML =
+    '<span>Inserta fecha</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({ html: toastHTML });
+      return "";
+  }
+  
   for (let index = 0; index < code.length; index++) {
-    if (code.charCodeAt(index) <= 48 && code.charCodeAt(index) >= 57) {
+    if (code.charCodeAt(index) < 47 || code.charCodeAt(index) > 58) {
       var toastHTML =
         '<span>Solo se admite numeros en la clave</span><button class="btn-flat toast-action">Ok</button>';
       M.toast({ html: toastHTML });
@@ -70,7 +83,13 @@ if (buttonEncriptar != null) {
     var message = document.getElementById("id_mensaje").value;
     var code = document.getElementById("id_clave").value;
     var today = new Date();
-    contenido.innerHTML = `${encryptOrDecrypt(message, code, today, true)}`;
+    var textV = encryptOrDecrypt(message, code, today, true);
+    contenido.innerHTML = textV;
+    if (textV!="") {
+      var elem = document.getElementById("modal2");
+      var instance = M.Modal.getInstance(elem);
+      instance.open();
+    }
   };
 }
 
@@ -82,7 +101,13 @@ if (buttonDesencriptar != null) {
     var message = document.getElementById("id_mensaje").value;
     var code = document.getElementById("id_clave").value;
     var today = new Date(document.getElementById("id_date").value);
-    contenido.innerHTML = `${encryptOrDecrypt(message, code, today, false)}`;
+    var textV = encryptOrDecrypt(message, code, today, false);
+    contenido.innerHTML = textV;
+    if (textV!="") {
+      var elem = document.getElementById("modal2");
+      var instance = M.Modal.getInstance(elem);
+      instance.open();
+    }
     document.getElementById("id_mensaje").value=null;
     document.getElementById("id_clave").value=null;
     document.getElementById("id_date").value=null;
