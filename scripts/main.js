@@ -13,7 +13,7 @@ function encryptOrDecrypt(text, code, today, typeOperation) {
   
   for (let index = 0; index < code.length; index++) {
     if((index+2)<=code.length){ 
-      btree.add(code.charAt(index)+code.charAt(index));
+      btree.add(code.charAt(index)+code.charAt(index+1));
       console.log();
     }else{
       btree.add(code.charAt(index));
