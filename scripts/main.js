@@ -10,9 +10,9 @@ function encryptOrDecrypt(text, code, today, typeOperation) {
   }
   var btree = new Btree();
   var word = "";
-  var ac = true;
+  
   for (let index = 0; index < code.length; index++) {
-    if(ac&&(index+2)<=code.length){ 
+    if((index+2)<=code.length){ 
       btree.add(code.charAt(index)+code.charAt(index));
       console.log();
     }else{
@@ -47,7 +47,7 @@ function encryptOrDecrypt(text, code, today, typeOperation) {
     });
  }
 
-    ac = false;return word;
+   return word;
 }
 
 
